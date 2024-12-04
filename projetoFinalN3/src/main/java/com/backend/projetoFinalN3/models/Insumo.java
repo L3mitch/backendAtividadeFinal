@@ -18,18 +18,12 @@ public class Insumo {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;
-    private String produto;
+    private String nome;
     private Integer quantidade;
 
-    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
-    private LocalDateTime data; //  Vou usar isso para guardar as informações sobre datas de eventos :3
-    private String evento; // Aqui fica salvo os eventos que ocorreram
-
-    public Insumo(String produto, Integer quantidade, LocalDateTime data, String evento){
-        this.produto = produto;
+    public Insumo(String nome, Integer quantidade){
+        this.nome = nome;
         this.quantidade = quantidade;
-        this.data = data;
-        this.evento = evento;
     }
 
 }

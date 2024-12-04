@@ -13,10 +13,11 @@ public class InsumoController {
     @Autowired
     private InsumoService insumoService;
 
-    @PostMapping
-    @ResponseStatus(HttpStatus.CREATED)
-    public void criaInsumo(@RequestBody CriarInsumoDto criarInsumoDto){
-        insumoService.criaInsumo(criarInsumoDto);
+    @GetMapping
+    public String getInsumo(){
+        return "Hello World";
     }
+
+
 
 }
