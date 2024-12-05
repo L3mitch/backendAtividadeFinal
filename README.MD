@@ -6,6 +6,26 @@
 
 Este projeto consiste em uma API que controla a criação de Kits de produtos para uma empresa, com o fim em realizar projetos e pesquisas. Um Kit é composto de produtos acabados, que por sua vez são compostos de insumos. Para criar um produto, é necessário dizer quais insumos serão utilizados, e assim por diante.
 
+## Requisitos
+
+-   _Java_ (versão 8 ou superior)
+-   _Maven_ (para gerenciamento de dependências)
+-   _Docker_ (para execução em container)
+
+## Compilação
+
+Para compilar o código, execute o seguinte comando no diretório raiz do projeto:
+
+bash
+mvn clean package
+
+## Execução com Docker
+
+Para criar e iniciar o container Docker:
+
+bash
+docker-compose up --build
+
 ## API
 
 ### /Insumos
