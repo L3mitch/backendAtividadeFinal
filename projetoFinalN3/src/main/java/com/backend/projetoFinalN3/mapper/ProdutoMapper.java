@@ -14,36 +14,35 @@ import java.util.stream.Collectors;
 public class ProdutoMapper {
 
     public ProdutoDTO toDTO(Produto produto) {
-        ProdutoDTO dto = new ProdutoDTO();
-        dto.setId(produto.getId());
-        dto.setCodigo(produto.getCodigo());
-        dto.setDescricao(produto.getDescricao());
-        dto.setPreco(produto.getPreco());
-        dto.setPrecoVenda(produto.getPrecoVenda());
-        dto.setTipo(produto.getTipo());
-        dto.setUnidadeMedida(produto.getUnidadeMedida());
-        dto.setEstruturaPadrao(produto.getEstruturaPadrao()
-                .stream()
-                .map(this::toEstruturaProdutoDTO)
-                .collect(Collectors.toList()));
-        return dto;
+        return new ProdutoDTO(
+                produto.getId(),
+                produto.getCodigo(),
+                produto.getDescricao(),
+                produto.getUnidadeMedida(),
+                produto.getPreco(),
+                produto.getPrecoVenda(),
+                produto.getTipo(),
+                produto.getEstruturaPadrao()
+                        .stream()
+                        .map(this::toEstruturaProdutoDTO)
+                        .collect(Collectors.toList())
+
+        );
     }
 
     public Produto toEntity(ProdutoDTO dto) {
         Produto produto = new Produto();
-        produto.setCodigo(dto.getCodigo());
-        produto.setDescricao(dto.getDescricao());
-        produto.setPreco(dto.getPreco());
-        produto.setPrecoVenda(dto.getPrecoVenda());
-        produto.setTipo(dto.getTipo());
-        produto.setUnidadeMedida(dto.getUnidadeMedida());
+        produto.setCodigo(dto.codigo());
+        produto.setDescricao(dto.descricao());
+        produto.setPreco(dto.preco());
+        produto.setPrecoVenda(dto.precoVenda());
+        produto.setTipo(dto.tipo());
+        produto.setUnidadeMedida(dto.unidadeMedida());
         return produto;
     }
 
     private EstruturaProdutoDTO toEstruturaProdutoDTO(EstruturaProduto estrutura) {
-        EstruturaProdutoDTO dto = new EstruturaProdutoDTO();
-        dto.setInsumoOuProdutoId(estrutura.getInsumoOuProduto().getId());
-        dto.setQuantidade(estrutura.getQuantidade());
+        EstruturaProdutoDTO dto = new EstruturaProdutoDTO(estrutura.getInsumoOuProduto().getId(),estrutura.getQuantidade());
         return dto;
     }
 
@@ -53,10 +52,10 @@ public class ProdutoMapper {
 
         // Mapeia o insumo ou produto a partir do ID
         Insumo insumoOuProduto = new Insumo();
-        insumoOuProduto.setId(dto.getInsumoOuProdutoId());
+        insumoOuProduto.setId(dto.insumoOuProdutoId());
         estrutura.setInsumoOuProduto(insumoOuProduto);
 
-        estrutura.setQuantidade(dto.getQuantidade());
+        estrutura.setQuantidade(dto.quantidade());
         return estrutura;
     }
 }

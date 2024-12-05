@@ -14,24 +14,24 @@ import java.util.stream.Collectors;
 public class KitMapper {
 
     public KitDTO toDTO(Kit kit) {
-        KitDTO dto = new KitDTO();
-        dto.setId(kit.getId());
-        dto.setCodigo(kit.getCodigo());
-        dto.setDescricao(kit.getDescricao());
-        dto.setPrecoVenda(kit.getPrecoVenda());
-        dto.setEstruturaKit(kit.getEstruturaKit()
-                .stream()
-                .map(this::toEstruturaKitDTO)
-                .collect(Collectors.toList()));
-        return dto;
+        return new KitDTO(
+                kit.getId(),
+                kit.getCodigo(),
+                kit.getDescricao(),
+                kit.getPrecoVenda(),
+                kit.getEstruturaKit()
+                        .stream()
+                        .map(this::toEstruturaKitDTO)
+                        .collect(Collectors.toList())
+        );
     }
 
     public Kit toEntity(KitDTO dto) {
         Kit kit = new Kit();
-        kit.setCodigo(dto.getCodigo());
-        kit.setDescricao(dto.getDescricao());
-        kit.setPrecoVenda(dto.getPrecoVenda());
-        kit.setEstruturaKit(dto.getEstruturaKit()
+        kit.setCodigo(dto.codigo());
+        kit.setDescricao(dto.descricao());
+        kit.setPrecoVenda(dto.precoVenda());
+        kit.setEstruturaKit(dto.estruturaKit()
                 .stream()
                 .map(this::toEstruturaKit)
                 .collect(Collectors.toList()));
@@ -46,9 +46,9 @@ public class KitMapper {
     private EstruturaKit toEstruturaKit(EstruturaKitDTO dto) {
         EstruturaKit estrutura = new EstruturaKit();
         Produto produtoPA = new Produto(); // Cria um objeto Produto
-        produtoPA.setId(dto.getProdutoPAId()); // Define o ID do produtoPA
+        produtoPA.setId(dto.produtoPAId()); // Define o ID do produtoPA
         estrutura.setProdutoPA(produtoPA);
-        estrutura.setQuantidade(dto.getQuantidade());
+        estrutura.setQuantidade(dto.quantidade());
         return estrutura;
     }
 }

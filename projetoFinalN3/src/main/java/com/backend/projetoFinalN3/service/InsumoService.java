@@ -35,11 +35,11 @@ public class InsumoService {
     public InsumoDTO atualizarInsumo(Long id, InsumoDTO insumoDTO) {
         Insumo insumo = insumoRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Insumo não encontrado"));
-        insumo.setCodigo(insumoDTO.getCodigo());
-        insumo.setDescricao(insumoDTO.getDescricao());
-        insumo.setUnidadeMedida(insumoDTO.getUnidadeMedida());
-        insumo.setFornecedor(insumoDTO.getFornecedor());
-        insumo.setPreco(insumoDTO.getPreco());
+        insumo.setCodigo(insumoDTO.codigo());
+        insumo.setDescricao(insumoDTO.descricao());
+        insumo.setUnidadeMedida(insumoDTO.unidadeMedida());
+        insumo.setFornecedor(insumoDTO.fornecedor());
+        insumo.setPreco(insumoDTO.preco());
         Insumo atualizado = insumoRepository.save(insumo);
         return insumoMapper.toDTO(atualizado);
     }
