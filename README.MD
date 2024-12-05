@@ -314,61 +314,115 @@ Este projeto consiste em uma API que controla a criação de Kits de produtos pa
                 "quantidade": 0
             }]
 
--   GET /Kits
+-   GET /Kits/{kitId}/estruturas
 
-    Utilizado para listar os kits
+    Utilizado para listar a estrutura de kit
 
           Exemplo de resposta:
 
           200 OK
 
-          [
-            {
-                "id": 0,
-                "codigo": "String",
-                "descricao": "String",
-                "precoVenda": 0.0,
-                "estruturaKit": [{
-                    "produtoPAId": 0,
-                    "quantidade": 0
-                }]
-            }
-          ]
+            [{
+                "produtoPAId": 0,
+                "quantidade": 0
+            }]
 
--   PUT /Kits/{id}
+-   PUT /Kits/{kitId}/estruturas
 
-    Utilizado para editar um kit
+    Utilizado para editar uma estrutura de kit
 
           Exemplo de requisição
 
-            {
-                "codigo": "String",
-                "descricao": "String",
-                "precoVenda": 0.0,
-                "estruturaKit": [{
-                    "produtoPAId": 0,
-                    "quantidade": 0
-                }]
-            }
+            [{
+                "produtoPAId": 0,
+                "quantidade": 0
+            }]
 
           Exemplo de resposta:
 
             200 OK
 
-            {
-                "id": 0,
-                "codigo": "String",
-                "descricao": "String",
-                "precoVenda": 0.0,
-                "estruturaKit": [{
-                    "produtoPAId": 0,
+            [{
+                "produtoPAId": 0,
+                "quantidade": 0
+            }]
+
+-   DELETE /Kits/{kitId}/estruturas
+
+    Utilizado para deletar uma estrutura de kit
+
+        Exemplo de resposta:
+
+        200 OK (Sem corpo de resposta)
+
+## /Produtos/{produtoId}/estruturas
+
+-   POST /Produtos/{produtoId}/estruturas
+
+    Utilizado para criar uma nova estrutura de produto
+
+          Exemplo de corpo de requisição:
+
+            [
+                {
+                    "insumoOuProdutoId": 0,
                     "quantidade": 0
-                }]
-            }
+                }
+            ]
 
--   DELETE /Kits/{id}
+          Exemplo de resposta:
 
-    Utilizado para deletar um kit
+          201 Created
+
+            [
+                {
+                    "insumoOuProdutoId": 0,
+                    "quantidade": 0
+                }
+            ]
+
+-   GET /Produtos/{produtoId}/estruturas
+
+    Utilizado para listar a estrutura de produto
+
+          Exemplo de resposta:
+
+          200 OK
+
+            [
+                {
+                    "insumoOuProdutoId": 0,
+                    "quantidade": 0
+                }
+            ]
+
+-   PUT /Produtos/{produtoId}/estruturas
+
+    Utilizado para editar uma estrutura de produto
+
+          Exemplo de requisição
+
+            [
+                {
+                    "insumoOuProdutoId": 0,
+                    "quantidade": 0
+                }
+            ]
+
+          Exemplo de resposta:
+
+            200 OK
+
+            [
+                {
+                    "insumoOuProdutoId": 0,
+                    "quantidade": 0
+                }
+            ]
+
+-   DELETE /Produtos/{produtoId}/estruturas
+
+    Utilizado para deletar uma estrutura de produto
 
         Exemplo de resposta:
 
