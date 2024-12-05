@@ -1,6 +1,6 @@
 # Projeto final Backend
 
-### Michel Almeida da Rosa, Elias, Pedro Virtuozo
+### Michel Almeida da Rosa, Elias Enns, Pedro Virtuozo
 
 ## Sobre
 
