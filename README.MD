@@ -18,6 +18,7 @@ Para compilar o código, execute o seguinte comando no diretório raiz do projet
 
 ```bash
 mvn clean package
+```
 
 ## Execução com Docker
 
@@ -25,6 +26,7 @@ Para criar e iniciar o container Docker:
 
 ```bash
 docker-compose up --build
+```
 
 ## API
 
