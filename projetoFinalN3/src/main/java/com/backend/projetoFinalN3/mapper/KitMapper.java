@@ -39,10 +39,8 @@ public class KitMapper {
     }
 
     private EstruturaKitDTO toEstruturaKitDTO(EstruturaKit estrutura) {
-        EstruturaKitDTO dto = new EstruturaKitDTO();
-        dto.setProdutoPAId(estrutura.getProdutoPA().getId());
-        dto.setQuantidade(estrutura.getQuantidade());
-        return dto;
+        return new EstruturaKitDTO(estrutura.getProdutoPA().getId(),estrutura.getQuantidade());
+
     }
 
     private EstruturaKit toEstruturaKit(EstruturaKitDTO dto) {
