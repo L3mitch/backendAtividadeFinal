@@ -1,0 +1,153 @@
+{
+  "_type": "export",
+  "__export_format": 4,
+  "__export_date": "2023-12-04T00:00:00.000Z",
+  "__export_source": "insomnia.desktop.app:v2023.5.8",
+  "resources": [
+    {
+      "_id": "wrk_1",
+      "_type": "workspace",
+      "name": "ProjetoFinalN3",
+      "description": "",
+      "scope": "collection"
+    },
+    {
+      "_id": "fld_2",
+      "_type": "request_group",
+      "name": "Insumos",
+      "parentId": "wrk_1"
+    },
+    {
+      "_id": "fld_3",
+      "_type": "request_group",
+      "name": "Produtos",
+      "parentId": "wrk_1"
+    },
+    {
+      "_id": "fld_4",
+      "_type": "request_group",
+      "name": "Kits",
+      "parentId": "wrk_1"
+    },
+    {
+      "_id": "req_1",
+      "_type": "request",
+      "parentId": "fld_2",
+      "name": "Criar Insumo",
+      "method": "POST",
+      "url": "http://localhost:8080/insumos",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"codigo\": \"INS001\",\n  \"descricao\": \"Parafuso\",\n  \"unidadeMedida\": \"PC\",\n  \"fornecedor\": \"Fornecedor A\",\n  \"preco\": 1.50\n}"
+      }
+    },
+    {
+      "_id": "req_2",
+      "_type": "request",
+      "parentId": "fld_2",
+      "name": "Listar Insumos",
+      "method": "GET",
+      "url": "http://localhost:8080/insumos"
+    },
+    {
+      "_id": "req_3",
+      "_type": "request",
+      "parentId": "fld_2",
+      "name": "Atualizar Insumo",
+      "method": "PUT",
+      "url": "http://localhost:8080/insumos/1",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"codigo\": \"INS001\",\n  \"descricao\": \"Parafuso Atualizado\",\n  \"unidadeMedida\": \"PC\",\n  \"fornecedor\": \"Fornecedor A\",\n  \"preco\": 1.75\n}"
+      }
+    },
+    {
+      "_id": "req_4",
+      "_type": "request",
+      "parentId": "fld_2",
+      "name": "Excluir Insumo",
+      "method": "DELETE",
+      "url": "http://localhost:8080/insumos/1"
+    },
+    {
+      "_id": "req_5",
+      "_type": "request",
+      "parentId": "fld_3",
+      "name": "Criar Produto",
+      "method": "POST",
+      "url": "http://localhost:8080/produtos",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"codigo\": \"PROD001\",\n  \"descricao\": \"Produto Final\",\n  \"unidadeMedida\": \"PC\",\n  \"preco\": 50.00,\n  \"precoVenda\": 75.00,\n  \"tipo\": \"PE\",\n  \"estruturaPadrao\": []\n}"
+      }
+    },
+    {
+      "_id": "req_6",
+      "_type": "request",
+      "parentId": "fld_3",
+      "name": "Listar Produtos",
+      "method": "GET",
+      "url": "http://localhost:8080/produtos"
+    },
+    {
+      "_id": "req_7",
+      "_type": "request",
+      "parentId": "fld_3",
+      "name": "Atualizar Produto",
+      "method": "PUT",
+      "url": "http://localhost:8080/produtos/1",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"codigo\": \"PROD001\",\n  \"descricao\": \"Produto Final Atualizado\",\n  \"unidadeMedida\": \"PC\",\n  \"preco\": 55.00,\n  \"precoVenda\": 80.00,\n  \"tipo\": \"PE\",\n  \"estruturaPadrao\": []\n}"
+      }
+    },
+    {
+      "_id": "req_8",
+      "_type": "request",
+      "parentId": "fld_3",
+      "name": "Excluir Produto",
+      "method": "DELETE",
+      "url": "http://localhost:8080/produtos/1"
+    },
+    {
+      "_id": "req_9",
+      "_type": "request",
+      "parentId": "fld_4",
+      "name": "Criar Kit",
+      "method": "POST",
+      "url": "http://localhost:8080/kits",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"codigo\": \"KIT001\",\n  \"descricao\": \"Kit de Ferramentas\",\n  \"precoVenda\": 150.00,\n  \"estruturaKit\": []\n}"
+      }
+    },
+    {
+      "_id": "req_10",
+      "_type": "request",
+      "parentId": "fld_4",
+      "name": "Listar Kits",
+      "method": "GET",
+      "url": "http://localhost:8080/kits"
+    },
+    {
+      "_id": "req_11",
+      "_type": "request",
+      "parentId": "fld_4",
+      "name": "Atualizar Kit",
+      "method": "PUT",
+      "url": "http://localhost:8080/kits/1",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"codigo\": \"KIT001\",\n  \"descricao\": \"Kit de Ferramentas Atualizado\",\n  \"precoVenda\": 175.00,\n  \"estruturaKit\": []\n}"
+      }
+    },
+    {
+      "_id": "req_12",
+      "_type": "request",
+      "parentId": "fld_4",
+      "name": "Excluir Kit",
+      "method": "DELETE",
+      "url": "http://localhost:8080/kits/1"
+    }
+  ]
+}
