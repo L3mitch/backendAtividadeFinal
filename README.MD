@@ -16,14 +16,14 @@ Este projeto consiste em uma API que controla a criação de Kits de produtos pa
 
 Para compilar o código, execute o seguinte comando no diretório raiz do projeto:
 
-bash
+```bash
 mvn clean package
 
 ## Execução com Docker
 
 Para criar e iniciar o container Docker:
 
-bash
+```bash
 docker-compose up --build
 
 ## API
