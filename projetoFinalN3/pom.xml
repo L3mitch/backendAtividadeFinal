@@ -10,9 +10,9 @@
 	</parent>
 	<groupId>com.backend</groupId>
 	<artifactId>projetoFinalN3</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<name>projetoFinalN3</name>
-	<description>demoParaProjetoFinal</description>
+	<version>1.0</version>
+	<name>demo</name>
+	<description>Elias Michel e Pedro!</description>
 	<url/>
 	<licenses>
 		<license/>
@@ -49,11 +49,6 @@
 			<scope>runtime</scope>
 		</dependency>
 		<dependency>
-			<groupId>org.projectlombok</groupId>
-			<artifactId>lombok</artifactId>
-			<optional>true</optional>
-		</dependency>
-		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
@@ -65,14 +60,6 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
-				<configuration>
-					<excludes>
-						<exclude>
-							<groupId>org.projectlombok</groupId>
-							<artifactId>lombok</artifactId>
-						</exclude>
-					</excludes>
-				</configuration>
 			</plugin>
 		</plugins>
 	</build>
